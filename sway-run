@@ -1,0 +1,15 @@
+#!/bin/bash
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_sESSION=sway
+
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export __GL_SYNC_TO_VBLANK=0
+
+export LIBSEAT_BACKEND=seatd
+export WLR_RENDERER=vulkan
+
+exec dbus-run-session sway "$@"
