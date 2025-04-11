@@ -1,11 +1,18 @@
+
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-# font JetBrains Mono Bold 9
-font Noto Sans SemiBold 9
+font JetBrains Mono Medium 9
 exec wlsunset -S 01:30 &
+
+output * {
+    allow_tearing yes
+    max_render_time off
+}
+
+for_window [all] allow_tearing yes 
 
 ### Variables
 #
@@ -246,7 +253,7 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    font Noto Sans Mono Bold 9
+    font JetBrains  Mono Bold 9
 
     colors {
         statusline #ffffff
