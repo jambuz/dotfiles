@@ -4,14 +4,13 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-font JetBrains Mono Medium 9
+font JetBrains Mono Bold 9
 exec wlsunset -S 01:30 &
 
 output eDP-1 {
     allow_tearing yes
     max_render_time off
     background #222222 solid_color
-    subpixel none
 }
 
 for_window [all] allow_tearing yes 
@@ -254,7 +253,7 @@ bar {
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
     status_command i3status
-    font JetBrains  Mono Bold 9
+    font JetBrains Mono Bold 9
 
     colors {
         statusline #ffffff
