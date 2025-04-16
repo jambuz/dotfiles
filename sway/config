@@ -7,12 +7,16 @@
 font JetBrains Mono Medium 9
 exec wlsunset -S 01:30 &
 
-output * {
+output eDP-1 {
     allow_tearing yes
     max_render_time off
+    background #222222 solid_color
+    subpixel none
 }
 
 for_window [all] allow_tearing yes 
+
+client.focused #588157 #3a5a40 #dad7cd #3a5a40 #3a5a40
 
 ### Variables
 #
@@ -31,10 +35,6 @@ set $term foot
 # Launch via Sway
 set $drun tofi-drun | xargs swaymsg exec --
 bindsym $mod+d exec $drun
-
-# Light control
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
 
 ### Output configuration
 #
@@ -252,14 +252,16 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command i3status
     font JetBrains  Mono Bold 9
 
     colors {
         statusline #ffffff
-        background #323232
+        background #222222
         inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace #588157 #3a5a40 #dad7cd
     }
 }
-
+ 
 include /etc/sway/config.d/*
