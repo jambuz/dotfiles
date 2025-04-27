@@ -1,0 +1,1 @@
+linux /boot/vmlinuz root=live:LABEL=VOID_LIVE console=ttyS0 console=tty1 rd.live.dir=/ rd.vconsole.unicode rd.vconsole.keymap=fi ro rd.live.ram rd.live.overlay=none rd.live.image rootfstype=ext4 rd.lvm=0 rd.dm=0 rd.md=0 rd.luks=0 module_blacklist=snd_pcsp,pcspkr
