@@ -1,0 +1,9 @@
+theme = "meliora"
+
+[editor]
+mouse = false
+cursorline = true
+completion-timeout = 0
+auto-info = false
+indent-guides.render = true
+indent-guides.skip-levels = 1
