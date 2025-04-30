@@ -1,4 +1,3 @@
-
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -15,7 +14,7 @@ output eDP-1 {
 
 for_window [all] allow_tearing yes 
 
-client.focused #588157 #3a5a40 #dad7cd #3a5a40 #3a5a40
+client.focused #50514f #50514f #dad7cd #50514f #50514f
 
 ### Variables
 #
@@ -203,7 +202,7 @@ input "type:pointer" {
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+minus scratchpad showtar
 #
 # Resizing containers:
 #
@@ -259,7 +258,7 @@ bar {
         statusline #ffffff
         background #222222
         inactive_workspace #32323200 #32323200 #5c5c5c
-        focused_workspace #588157 #3a5a40 #dad7cd
+        focused_workspace #588157 #50514f #dad7cd
     }
 }
  
