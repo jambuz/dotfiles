@@ -3,17 +3,10 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
+
+# Initialization
 font JetBrains Mono Bold 9
 exec wlsunset -S 01:30 &
-
-output eDP-1 {
-    allow_tearing yes
-    max_render_time off
-    background #333333 solid_color
-}
-
-for_window [all] allow_tearing yes 
-
 client.focused #333333 #333333 #dad7cd #333333 #333333
 
 ### Variables
@@ -28,7 +21,12 @@ set $down j
 set $up k
 set $right l
 
-output * bg $wallpaper fill
+output eDP-1 {
+    allow_tearing yes
+    max_render_time off
+    background #333333 solid_color
+    bg $wallpaper fill
+}
 
 input "type:keyboard" {
     xkb_layout fi
@@ -210,7 +208,7 @@ bar {
 
     colors {
         statusline #ffffff
-        background #333333dd
+        background #222222
         inactive_workspace #333333 #333333 #5c5c5c
         focused_workspace #50514f #50514f #dad7cd
     }
