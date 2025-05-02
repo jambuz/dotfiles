@@ -24,7 +24,7 @@ set $right l
 output eDP-1 {
     allow_tearing yes
     max_render_time off
-    background #333333 solid_color
+    background #222222 solid_color
 }
 
 input "type:keyboard" {
