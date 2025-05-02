@@ -25,7 +25,6 @@ output eDP-1 {
     allow_tearing yes
     max_render_time off
     background #333333 solid_color
-    bg $wallpaper fill
 }
 
 input "type:keyboard" {
