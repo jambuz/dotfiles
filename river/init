@@ -153,9 +153,9 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x00000000
-riverctl border-color-unfocused 0x00000000
+# riverctl background-color 0x002b36
+riverctl border-color-focused 0x000000
+riverctl border-color-unfocused 0x000000
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 150
@@ -170,3 +170,4 @@ riverctl rule-add -app-id "bar" csd
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 &
+swaybg -i /home/foo/.config/river/wallpaper.jpg -m fill
