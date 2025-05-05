@@ -12,4 +12,4 @@ export __GL_SYNC_TO_VBLANK=0
 export LIBSEAT_BACKEND=seatd
 export WLR_RENDERER=vulkan
 
-exec river "$@"
+exec river -no-xwayland "$@"
