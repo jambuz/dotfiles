@@ -5,10 +5,11 @@
 # Read `man 5 sway` for a complete reference.
 
 # Initialization
-font JetBrains Mono Bold 9
+exec brightnessctl s 15%
 exec wlsunset -S 01:30 &
-client.focused #333333 #333333 #dad7cd #333333 #333333
 exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+font JetBrains Mono Bold 9
+client.focused #333333 #333333 #dad7cd #333333 #333333
 
 ### Variables
 #
