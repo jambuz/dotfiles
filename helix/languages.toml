@@ -1,3 +1,9 @@
+[language-server.armls]
+command = "armls"
+
 [[language]] 
-name = "c" 
+name = "nasm" 
+scope = "source.s"
+file-types = ["s"]
+language-servers = [ "armls" ]
 auto-format = true
