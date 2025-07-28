@@ -1,9 +1,0 @@
-[language-server.armls]
-command = "armls"
-
-[[language]] 
-name = "gas" 
-scope = "source.s"
-file-types = ["s"]
-language-servers = [ "armls" ]
-auto-format = true
