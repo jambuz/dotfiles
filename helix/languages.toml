@@ -2,7 +2,7 @@
 command = "armls"
 
 [[language]] 
-name = "nasm" 
+name = "gas" 
 scope = "source.s"
 file-types = ["s"]
 language-servers = [ "armls" ]
