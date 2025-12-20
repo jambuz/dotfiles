@@ -5,7 +5,7 @@ exec brightnessctl s 1
 exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
 seat seat0 xcursor_theme breeze_cursors 20
-font JetBrains Mono Medium 9
+font JetBrains Mono Medium 9.5
 
 # ──────────────────────────────
 # Appearance
@@ -13,9 +13,6 @@ font JetBrains Mono Medium 9
 titlebar_padding 8 6
 default_border none
 client.focused #333333 #333333 #dad7cd #333333 #333333
-
-# Give Foot a normal border (for visual clarity)
-# for_window [app_id="foot"] border normal
 
 # ──────────────────────────────
 # Variables
@@ -158,14 +155,14 @@ floating_modifier $mod normal
 bar {
     position bottom
     status_command i3status
-    font JetBrains Mono Medium 9
+    font JetBrains Mono 9.5
     status_edge_padding 8
     status_padding 6
     strip_workspace_name yes
     workspace_min_width 20
 
     colors {
-        statusline #ffffff
+        statusline #fafafa
         background #222222
         inactive_workspace #333333 #333333 #5c5c5c
         focused_workspace #50514f #50514f #dad7cd
