@@ -9,11 +9,10 @@
 #
 	# Font to use. Can be a path to a font file or a Pango font name.
 	# Using a path may improve startup speed.
-	font = "/usr/share/fonts/jetbrains-mono/JetBrainsMono-Regular.ttf"
-	# font = "JetBrains Mono"
+	font = "JetBrains Mono"
 
 	# Point size of the font.
-	font-size = 11
+	font-size = 10
 
 	# OpenType font features. Comma separated list.
 	# Examples: "smcp, c2sc" (small caps), "liga 0" (disable ligatures)
