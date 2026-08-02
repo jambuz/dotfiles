@@ -3,14 +3,12 @@
 # ──────────────────────────────
 exec brightnessctl s 1
 exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
-
 seat seat0 xcursor_theme breeze_cursors 20
 font JetBrains Mono Medium 9.5
 
 # ──────────────────────────────
 # Appearance
 # ──────────────────────────────
-titlebar_padding 8 6
 default_border none
 client.focused #333333 #333333 #dad7cd #333333 #333333
 
@@ -19,28 +17,22 @@ client.focused #333333 #333333 #dad7cd #333333 #333333
 # ──────────────────────────────
 set $mod Mod4
 set $term foot
-set $drun tofi-drun | xargs swaymsg exec --
-set $wallpaper ~/.config/sway/wallpaper
-
-# Vim-style navigation keys
+set $drun tofi-drun --drun-launch=true
 set $left h
 set $down j
 set $up k
 set $right l
 
 # ──────────────────────────────
-# Outputs
+# Outputs & Inputs
 # ──────────────────────────────
 output eDP-1 {
     allow_tearing yes
-    max_render_time off
-    background #222222 solid_color
+    max_render_time 4
+    background #202020 solid_color
     subpixel none
 }
 
-# ──────────────────────────────
-# Inputs
-# ──────────────────────────────
 input "type:keyboard" {
     xkb_layout fi
     xkb_variant nodeadkeys
@@ -61,14 +53,12 @@ input "type:pointer" {
 # Keybindings
 # ──────────────────────────────
 
-# Apps
+# Apps & Session
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $drun
 bindsym $mod+Shift+q kill
-
-# Session
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit Sway?' -B 'Yes' 'swaymsg exit'
+bindsym $mod+Shift+e exit
 
 # Focus movement
 bindsym $mod+$left  focus left
@@ -134,9 +124,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# ──────────────────────────────
 # System keys
-# ──────────────────────────────
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 3%+
 bindsym --locked $mod+XF86MonBrightnessDown exec wlsunset -S 01:30 -t 3000
@@ -144,9 +132,6 @@ bindsym --locked $mod+XF86MonBrightnessUp exec pkill wlsunset
 bindsym Print exec grimshot copy area
 bindsym $mod+Print exec grimshot save area
 
-# ──────────────────────────────
-# Floating & Mouse
-# ──────────────────────────────
 floating_modifier $mod normal
 
 # ──────────────────────────────
@@ -154,7 +139,7 @@ floating_modifier $mod normal
 # ──────────────────────────────
 bar {
     position bottom
-    status_command i3status
+    status_command while date +'%d %b %H:%M'; do sleep 60; done
     font JetBrains Mono 9.5
     status_edge_padding 8
     status_padding 6
@@ -162,8 +147,8 @@ bar {
     workspace_min_width 20
 
     colors {
-        statusline #fafafa
-        background #222222
+        statusline #dddddd
+        background #202020
         inactive_workspace #333333 #333333 #5c5c5c
         focused_workspace #50514f #50514f #dad7cd
         separator #00000000
