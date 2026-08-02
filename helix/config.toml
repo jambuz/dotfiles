@@ -1,9 +1,9 @@
-theme = "melia"
+theme = "dark_plus_transparent"
 
 [editor]
-mouse = false
-cursorline = true
-completion-timeout = 0
 auto-info = false
+completion-timeout = 0
+cursorline = true
 indent-guides.render = true
 indent-guides.skip-levels = 1
+mouse = false

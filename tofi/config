@@ -1,187 +1,37 @@
-# Minimal and clean tofi config
-#
-# Copy this file to ~/.config/tofi/config
-# This version is streamlined for quick startup, but retains
-# detailed comments for clarity.
+# Performance
+font-size = 10
+hint-font = false
+late-keyboard-init = true
+ascii-input = true
 
-#
-### Fonts
-#
-	# Font to use. Can be a path to a font file or a Pango font name.
-	# Using a path may improve startup speed.
-	font = "JetBrains Mono"
+# Style & Layout
+text-color = #dddddd
+selection-color = #c9b58e
+prompt-text = "run: "
+horizontal = true
+result-spacing = 12
+num-results = 5
 
-	# Point size of the font.
-	font-size = 10
+# Window
+width = 256
+height = 40
+outline-width = 0
+border-width = 1
+border-color = #444444
+corner-radius = 8
+padding-top = 8
+padding-bottom = 8
+padding-left = 10
+padding-right = 10
 
-	# OpenType font features. Comma separated list.
-	# Examples: "smcp, c2sc" (small caps), "liga 0" (disable ligatures)
-	font-features = ""
+# Position
+anchor = bottom
+margin-bottom = 24
+exclusive-zone = -1
 
-	# OpenType font variations. Comma separated list.
-	# Examples: "wght 900" (Extra bold), "wdth 25, slnt -10" (Narrow + slanted)
-	font-variations = ""
-
-	# Whether to enable font hinting (improves legibility at small sizes)
-	hint-font = false
-
-#
-### Colors
-#
-	# Default text color
-	text-color = #cccccc
-
-	# Color used to highlight the selected result
-	selection-color = #c9b58e
-
-#
-### Text cursor
-#
-	# Style of the text cursor: bar, block, underscore
-	text-cursor-style = block
-
-	# Cursor color
-	text-cursor-color = #999999
-
-	# Corner radius for the text cursor
-	text-cursor-corner-radius = 0
-
-	# Thickness of bar/underscore cursor (optional)
-	# text-cursor-thickness = 2
-
-#
-### Text layout
-#
-	# Prompt displayed before input
-	prompt-text = "run: "
-
-	# Extra horizontal padding between prompt and input
-	prompt-padding = 0
-
-	# Placeholder text in the input field
-	placeholder-text = ""
-
-	# Maximum number of results to display (0 = unlimited)
-	num-results = 0
-
-	# Spacing between results in pixels
-	result-spacing = 12
-
-	# Display results horizontally
-	horizontal = true
-
-	# Minimum input width (for horizontal layout)
-	min-input-width = 0
-
-#
-### Window theming
-#
-	# Width and height of the window in pixels
-	width = 384
-	height = 40
-
-	# Background color of the window
-	background-color = #222222
-
-	# Border outline width (pixels)
-	outline-width = 0
-
-	# Border outline color
-	outline-color = #080800
-
-	# Border width (pixels)
-	border-width = 1
-
-	# Border color
-	border-color = #444444
-
-	# Corner radius for window edges
-	corner-radius = 8
-
-	# Padding inside the window
-	padding-top = 8
-	padding-bottom = 8
-	padding-left = 10
-	padding-right = 10
-
-	# Clip text within padding bounds
-	clip-to-padding = true
-
-	# Scale window based on output scale factor
-	scale = true
-
-#
-### Window positioning
-#
-	# Target output display (empty = default)
-	output = ""
-
-	# Window anchor location: top-left, top, top-right, right, bottom-right,
-	# bottom, bottom-left, left, center
-	anchor = bottom
-
-	# Exclusive zone height (-1 = ignore, 0 = auto)
-	exclusive-zone = -1
-
-	# Margins from screen edges (pixels)
-	margin-top = 0
-	margin-bottom = 24
-	margin-left = 0
-	margin-right = 0
-
-#
-### Behaviour
-#
-	# Hide mouse cursor
-	hide-cursor = true
-
-	# Show text cursor in input field
-	text-cursor = false
-
-	# Enable usage history
-	history = false
-
-	# History file path (optional)
-	# history-file = /path/to/histfile
-
-	# Matching algorithm: normal, prefix, fuzzy
-	matching-algorithm = normal
-
-	# Require a match before selection is allowed
-	require-match = true
-
-	# Automatically accept a single result
-	auto-accept-single = false
-
-	# Hide typed input
-	hide-input = false
-
-	# Character to display when input is hidden
-	hidden-character = "*"
-
-	# Use physical keybindings regardless of layout
-	physical-keybindings = true
-
-	# Print selection index instead of value (non-run modes)
-	print-index = false
-
-	# Launch applications directly in drun mode
-	drun-launch = false
-
-	# Terminal to use in drun mode
-	terminal = foot
-
-	# Delay keyboard initialization (experimental)
-	late-keyboard-init = true
-
-	# Allow multiple instances
-	multi-instance = false
-
-	# Treat input as plain ASCII
-	ascii-input = false
-
-#
-### Inclusion
-#
-	# Include other configuration files
-	# include = /path/to/config
+# Behavior
+hide-cursor = true
+history = false
+matching-algorithm = normal
+require-match = true
+physical-keybindings = true

@@ -1,10 +1,8 @@
 # ──────────────────────────────
 # Initialization
 # ──────────────────────────────
-exec brightnessctl s 1
-exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
-seat seat0 xcursor_theme breeze_cursors 20
 font JetBrains Mono Medium 9.5
+seat seat0 xcursor_theme breeze_cursors 20
 
 # ──────────────────────────────
 # Appearance
@@ -17,7 +15,7 @@ client.focused #333333 #333333 #dad7cd #333333 #333333
 # ──────────────────────────────
 set $mod Mod4
 set $term foot
-set $drun tofi-drun --drun-launch=true
+set $drun tofi-drun --font "/usr/share/fonts/jetbrains-mono/JetBrainsMono-Medium.ttf" --drun-launch=true
 set $left h
 set $down j
 set $up k
@@ -154,6 +152,9 @@ bar {
         separator #00000000
     }
 }
+
+exec brightnessctl s 1
+exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
 # ──────────────────────────────
 # Include
