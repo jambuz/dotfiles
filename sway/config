@@ -1,8 +1,29 @@
 # ──────────────────────────────
-# Initialization
+# Initialization & Environment
 # ──────────────────────────────
-font JetBrains Mono Medium 9.5
+font Noto Sans 10
 seat seat0 xcursor_theme breeze_cursors 20
+
+# Force dark theme for libadwaita/GTK4 & native cursors
+exec {
+    export GTK_THEME=Adwaita-dark
+    export XCURSOR_SIZE=20
+    export XCURSOR_PATH=~/.icons:/usr/share/icons
+}
+
+# ──────────────────────────────
+# GTK/Portal Theme & Font Sync (Optimized to Single Launch)
+# ──────────────────────────────
+exec {
+    SCHEMA="org.gnome.desktop.interface"
+    gsettings set $SCHEMA font-name 'Noto Sans 10'
+    gsettings set $SCHEMA document-font-name 'Noto Sans 10'
+    gsettings set $SCHEMA gtk-theme 'Adwaita-dark'
+    gsettings set $SCHEMA icon-theme 'Breeze'
+    gsettings set $SCHEMA cursor-theme 'breeze_cursors'
+    gsettings set $SCHEMA cursor-size 20
+    gsettings set $SCHEMA color-scheme 'prefer-dark'
+}
 
 # ──────────────────────────────
 # Appearance
@@ -27,7 +48,6 @@ set $right l
 output eDP-1 {
     allow_tearing yes
     max_render_time 4
-    background #202020 solid_color
     subpixel none
 }
 
@@ -58,21 +78,25 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
 
-# Focus movement
+# Focus movement (Vim-style)
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
 bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
+
+# Focus movement (Arrow keys)
 bindsym $mod+Left   focus left
 bindsym $mod+Down   focus down
 bindsym $mod+Up     focus up
 bindsym $mod+Right  focus right
 
-# Move windows
+# Move windows (Vim-style)
 bindsym $mod+Shift+$left  move left
 bindsym $mod+Shift+$down  move down
 bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
+
+# Move windows (Arrow keys)
 bindsym $mod+Shift+Left   move left
 bindsym $mod+Shift+Down   move down
 bindsym $mod+Shift+Up     move up
@@ -123,7 +147,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # System keys
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 3%+
 bindsym --locked $mod+XF86MonBrightnessDown exec wlsunset -S 01:30 -t 3000
 bindsym --locked $mod+XF86MonBrightnessUp exec pkill wlsunset
@@ -137,8 +161,8 @@ floating_modifier $mod normal
 # ──────────────────────────────
 bar {
     position bottom
-    status_command while date +'%d %b %H:%M'; do sleep 60; done
-    font JetBrains Mono 9.5
+    status_command while true; do date +'%d %b %H:%M'; sleep 60; done
+    font Noto Sans 10
     status_edge_padding 8
     status_padding 6
     strip_workspace_name yes
@@ -153,6 +177,7 @@ bar {
     }
 }
 
+# Startup Services
 exec brightnessctl s 1
 exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
